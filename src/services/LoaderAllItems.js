@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const LoaderAllItems = async (detail, link) => {
+const LoaderAllItems = async (detail) => {
     try {
-        const url = (`http://localhost:3001/users/list`)
+        const url = `https://api.coindesk.com/v1/bpi/currentprice.json`
         const res = await axios.get(url)
-        detail(res.data.body)
+        detail(res.data.bpi.USD)
+        
         
     } catch (error) {
         console.error(error);

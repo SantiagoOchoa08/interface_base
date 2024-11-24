@@ -1,0 +1,67 @@
+@import url('./cards.css');
+@import url('./purchaseCards.css');
+
+.main-screen {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Para permitir que el header esté arriba */
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: rgb(36,93,215);
+    background: linear-gradient(90deg, rgba(36,93,215,1) 0%, rgba(5,33,171,1) 47%, rgba(45,169,194,1) 100%);
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgb(255,255,255);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(135,135,135,1) 50%, rgba(61,61,61,1) 100%);
+    width: 300px;
+}
+
+.box {
+    margin: 10px; /* Espaciado entre los divs */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgb(175,175,175);
+    background: linear-gradient(90deg, rgba(175,175,175,1) 0%, rgba(194,194,194,1) 96%);
+}
+
+.btn {
+    background-color: #edf4f3; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 18px 60px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration-color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Hace que el header esté siempre visible */
+    top: 0;
+}
+
+.header img {
+    width: 50%;
+    height: 50%;
+}

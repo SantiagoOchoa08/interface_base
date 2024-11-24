@@ -1,4 +1,7 @@
 import TableMain from "./components/TableMain";
+import React from "react";
+import Header from "../../components/Header";
+import Cards from "../../components/Cards";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"
 import LoaderAllItems from "../../services/LoaderAllItems";
@@ -6,19 +9,27 @@ import LoaderAllItems from "../../services/LoaderAllItems";
 const Main = () => {
 
     const params = useParams()
-    const url = `http://localhost:3001/brakes`
-    const id = params.id
-    const [cleanDataDetail, setcleanDataDetail] = useState([])
-      
+    const [cleanDataDetail, setcleanDataDetail] = useState(10)
+    const [respuesta, setRespuesta] = useState()
+
+    const handleRes = async () => {
+        console.log(await cleanDataDetail)
+    }
     useEffect(() => {
-        LoaderAllItems(setcleanDataDetail, url, id)
-    }, [id, url, setcleanDataDetail])
+        LoaderAllItems(setcleanDataDetail)
+        handleRes()
+    }, [setcleanDataDetail])
 
 
     return (
         <div>
-            <h1>Interfaz SBS</h1>
-            <TableMain data={cleanDataDetail}/>
+
+            <Header />
+
+            <Cards />
+            <br></br>
+                <p>{cleanDataDetail.rate_float} </p> 
+                <p>{cleanDataDetail.code} </p> 
         </div>
     )
 }
